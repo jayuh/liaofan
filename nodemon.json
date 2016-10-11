@@ -1,0 +1,26 @@
+{
+  "verbose": true,
+  "ignore": [
+    "public",
+    "node_modules",
+    "data",
+    "bin",
+    ".git",
+    ".idea"
+  ],
+  "ext": "js,html",
+  "execMap": {
+    "": "node --debug",
+    "js": "node --harmony"
+  },
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "3333"
+  },
+  "watch": [
+    "app/",
+    "bin/",
+    "src/",
+    "views/"
+  ]
+}
