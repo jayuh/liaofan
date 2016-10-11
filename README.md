@@ -12,3 +12,7 @@
     - 商品列表: /admin/products/list.html
     - 添加商品: /admin/products/add.html
 - 商家系: /shop/
+- 接口: /api/
+  - 前台: /api/web/
+  - 后管: /api/admin/
+  - 商户: /api/shop/
