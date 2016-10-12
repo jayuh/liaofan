@@ -1,0 +1,5 @@
+exports.help = require('./help')
+exports.web = require('./web')
+exports.admin = require('./admin')
+exports.home = require('./shop')
+exports.home = require('./api')
