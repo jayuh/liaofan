@@ -1,6 +1,7 @@
 const path = require('path')
 const Koa = require('koa')
 const views = require('koa-views')
+const serve = require('koa-static')
 const onerror = require('koa-onerror')
 const log4js = require('log4js')
 const util = require('util')
@@ -14,8 +15,11 @@ const app = new Koa()
 
 app.keys = ['secret', 'lisa']
 
-// Init database
+// 初始化数据库
 database()
+
+// 静态资源目录
+app.use(serve(path.join(__dirname, '../views/static')))
 
 // Views
 app.use(views(path.join(__dirname, '../views'), {
@@ -64,6 +68,7 @@ app.use(router.routes()).use(router.allowedMethods())
 app.use(async (ctx, next) => {
   logger.info('请求404')
   util.log(`request to ${JSON.stringify(ctx.request)}`)
+  ctx.status = 404
   await ctx.render('404')
 })
 
