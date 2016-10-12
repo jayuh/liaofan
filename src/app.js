@@ -67,7 +67,7 @@ app.use(router.routes()).use(router.allowedMethods())
 // 404
 app.use(async (ctx, next) => {
   logger.info('请求404')
-  util.log(`request to ${JSON.stringify(ctx.request)}`)
+  util.log(`request to ${JSON.stringify(ctx.request.url)}`)
   ctx.status = 404
   await ctx.render('404')
 })
