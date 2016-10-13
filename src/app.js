@@ -19,7 +19,7 @@ app.keys = ['secret', 'lisa']
 database()
 
 // 静态资源目录
-app.use(serve(path.join(__dirname, '../views/static')))
+app.use(serve(path.join(__dirname, '../static')))
 
 // Views
 app.use(views(path.join(__dirname, '../views'), {
